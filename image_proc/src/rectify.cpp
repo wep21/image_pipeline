@@ -69,7 +69,8 @@ void RectifyNode::subscribeToCamera()
   sub_camera_ = image_transport::create_camera_subscription(
     this, "image", std::bind(
       &RectifyNode::imageCb,
-      this, std::placeholders::_1, std::placeholders::_2), "raw");
+      this, std::placeholders::_1, std::placeholders::_2), "raw",
+      rmw_qos_profile_sensor_data);
   // }
 }
 
